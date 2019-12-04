@@ -1,0 +1,23 @@
+body {
+  font: normal 12pt sans-serif;
+  text-align: center;
+}
+
+input {
+  font-size: 20pt;
+  width: 100px;
+}
+
+strong {
+  font-size: 20pt;
+}
+
+.numberP {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.numberP > * {
+  margin: 0 1ex;
+}
