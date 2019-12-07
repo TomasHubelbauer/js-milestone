@@ -65,3 +65,12 @@ export default function calculateCeilingMilestone(/** @type {number} */ number) 
   return ~~(number / magnitude) * magnitude;
 }
 ```
+
+## To-Do
+
+### Turn into a Node library to be added as a Git dependency
+
+Make IS4A Leaderboard depend on this. Add a `test` directory with a test app in
+it which depends on the library through NPM linking and then move the web app
+into a `docs` folder so that it can have its own `index.js` and have an
+`index.js` in the root which is the actual library.
