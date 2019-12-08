@@ -1,4 +1,3 @@
-console.log('TODO');
 window.addEventListener('load', () => {
   const numberInput = document.getElementById('numberInput');
   const flooringMilestoneStrong = document.getElementById('flooringMilestoneStrong');
@@ -13,6 +12,5 @@ window.addEventListener('load', () => {
   }
 
   numberInput.addEventListener('input', calculateMilestones);
-
   calculateMilestones();
 });

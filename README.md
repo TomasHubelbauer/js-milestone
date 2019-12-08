@@ -38,9 +38,8 @@ like the total of a currency, an amount of some physical value etc.
 
 ## To-Do
 
-### Turn into a Node library to be added as a Git dependency
+### Depend on this in IS4A
 
-Make IS4A Leaderboard depend on this. Add a `test` directory with a test app in
-it which depends on the library through NPM linking and then move the web app
-into a `docs` folder so that it can have its own `index.js` and have an
-`index.js` in the root which is the actual library.
+### Document the parameters
+
+Using JSDoc and in the readme.
