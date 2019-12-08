@@ -24,6 +24,16 @@ Advancing to 100, 90, 80, … 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 and 0.
 Flooring milestones are useful when tracking a position in a competition to be
 the number 1.
 
+`calculateFlooringMilestone(number, shift = 1)`
+
+- `number` The number to calculate the milestone for
+- `shift` The magnitude shift, defaults to no shift
+
+The magnitude shift is useful for selecting a more granular milestone level than
+what by default corresponds to the magnitude of the number. The default, `1`
+makes it so that the milestone for numbers in the hundreds is the hundred, `2`
+makes it so that the milestone for numbers in the hunderds is the ten etc.
+
 ## Ceiling Milestones
 
 Ceiling milestones are milestones where the tracked number increases over time:
@@ -36,9 +46,17 @@ And so on and so forth.
 Ceiling milestones are useful when tracking frontiers of an unbounded value,
 like the total of a currency, an amount of some physical value etc.
 
-## To-Do
+`calculateCeilingMilestone(number, shift = 1)`
 
-### Depend on this in IS4A
+- `number` The number to calculate the milestone for
+- `shift` The magnitude shift, defaults to no shift
+
+The magnitude shift is useful for selecting a more granular milestone level than
+what by default corresponds to the magnitude of the number. The default, `1`
+makes it so that the milestone for numbers in the hundreds is the hundred, `2`
+makes it so that the milestone for numbers in the hunderds is the ten etc.
+
+## To-Do
 
 ### Document the parameters
 
