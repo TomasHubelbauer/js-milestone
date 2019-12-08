@@ -1,5 +1,7 @@
 # JavaScript Milestones
 
+[**WEB**](https://tomashubelbauer.github.io/js-milestone)
+
 > Calculating milestones from numbers in JavaScript.
 
 This is a JavaScript algorithm for calculating automatic milestones for numbers.
@@ -22,25 +24,6 @@ Advancing to 100, 90, 80, … 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 and 0.
 Flooring milestones are useful when tracking a position in a competition to be
 the number 1.
 
-[`calculateFlooringMilestone.js`](calculateFlooringMilestone.js):
-```js
-export default function calculateFlooringMilestone(/** @type {number} */ number) {
-  if (number < 0) {
-    throw new Error('The number cannot be negative');
-  }
-
-  const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
-  const magnitude = Math.pow(10, digits - 1);
-
-  let temp = ~~(number / magnitude) * magnitude;
-  if (temp !== number) {
-    temp += magnitude;
-  }
-
-  return temp;
-}
-```
-
 ## Ceiling Milestones
 
 Ceiling milestones are milestones where the tracked number increases over time:
@@ -52,19 +35,6 @@ And so on and so forth.
 
 Ceiling milestones are useful when tracking frontiers of an unbounded value,
 like the total of a currency, an amount of some physical value etc.
-
-[`calculateCeilingMilestone.js`](calculateCeilingMilestone.js):
-```js
-export default function calculateCeilingMilestone(/** @type {number} */ number) {
-  if (number < 0) {
-    throw new Error('The number cannot be negative');
-  }
-
-  const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
-  const magnitude = Math.pow(10, digits - 1);
-  return ~~(number / magnitude) * magnitude;
-}
-```
 
 ## To-Do
 

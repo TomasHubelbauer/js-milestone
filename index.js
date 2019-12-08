@@ -1,19 +1,26 @@
-import calculateFlooringMilestone from './calculateFlooringMilestone.js';
-import calculateCeilingMilestone from './calculateCeilingMilestone.js';
-
-window.addEventListener('load', () => {
-  const numberInput = document.getElementById('numberInput');
-  const flooringMilestoneStrong = document.getElementById('flooringMilestoneStrong');
-  const ceilingMilestoneStrong = document.getElementById('ceilingMilestoneStrong');
-  function calculateMilestones() {
-    const number = numberInput.valueAsNumber;
-    flooringMilestoneStrong.textContent = calculateFlooringMilestone(number);
-    ceilingMilestoneStrong.textContent = calculateCeilingMilestone(number);
-    for (const numberSpan of document.getElementsByClassName('numberSpan')) {
-      numberSpan.textContent = number;
+module.exports = {
+  calculateCeilingMilestone(/** @type {number} */ number) {
+    if (number < 0) {
+      throw new Error('The number cannot be negative');
     }
-  }
 
-  numberInput.addEventListener('input', calculateMilestones);
-  calculateMilestones();
-});
+    const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
+    const magnitude = Math.pow(10, digits - 1);
+    return ~~(number / magnitude) * magnitude;
+  },
+  calculateFlooringMilestone(/** @type {number} */ number) {
+    if (number < 0) {
+      throw new Error('The number cannot be negative');
+    }
+
+    const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
+    const magnitude = Math.pow(10, digits - 1);
+
+    let temp = ~~(number / magnitude) * magnitude;
+    if (temp !== number) {
+      temp += magnitude;
+    }
+
+    return temp;
+  }
+};

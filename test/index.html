@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript Milestone Calculator</title>
+    <script>
+      const module = {};
+    </script>
+    <script src="../index.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>JavaScript Milestone Calculator</h1>
+    <p>Enter a number below to see its magnitude-adjusted milestone.</p>
+    <input type="number" min="0" id="numberInput" value="0" />
+    <h2>Flooring Milestone</h2>
+    <p>
+      A flooring milestone is the last tenth of the number's magnitude the
+      number has reached on its way towards zero.
+    </p>
+    <p class="numberP">
+      <span class="numberSpan"></span>
+      ←
+      <strong id="flooringMilestoneStrong"></strong>
+    </p>
+    <h2>Ceiling Milestone</h2>
+    <p>
+      A ceiling milestone is the last tenth of the number's magnitude the
+      number has surpassed on its way away from zero.
+    </p>
+    <p class="numberP">
+      <strong id="ceilingMilestoneStrong"></strong>
+      →
+      <span class="numberSpan"></span>
+    </p>
+    <hr />
+    <p>
+      Made by
+      <a href="https://hubelbauer.net">Tomas Hubelbauer</a>.
+      Find the repository on
+      <a href="https://github.com/TomasHubelbauer/js-milestone">GitHub</a>.
+    </p>
+  </body>
+</html>
