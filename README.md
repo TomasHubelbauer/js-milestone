@@ -13,6 +13,14 @@ For hundreds, each hundred is a milestone.
 For thousands, each thousand is a milestone.
 And so on…
 
+## Installation
+
+`npm i https://github.com/TomasHubelbauer/js-milestone`
+
+To upgrade to a new version, append `#v#.#.#` to the URL above, replacing the `#`
+by the new version number. See [Releases](https://github.com/TomasHubelbauer/js-milestone/releases)
+or the repo tags.
+
 ## Flooring Milestones
 
 Flooring milestones are milestones where the tracked number decreases over time:
