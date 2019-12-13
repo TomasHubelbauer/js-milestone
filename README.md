@@ -28,6 +28,7 @@ the number 1.
 
 - `number` The number to calculate the milestone for
 - `shift` The magnitude shift, defaults to no shift
+- Returns `{ milestone, gap }`
 
 The magnitude shift is useful for selecting a more granular milestone level than
 what by default corresponds to the magnitude of the number. The default, `1`
@@ -50,6 +51,7 @@ like the total of a currency, an amount of some physical value etc.
 
 - `number` The number to calculate the milestone for
 - `shift` The magnitude shift, defaults to no shift
+- Returns `{ milestone, gap }`
 
 The magnitude shift is useful for selecting a more granular milestone level than
 what by default corresponds to the magnitude of the number. The default, `1`

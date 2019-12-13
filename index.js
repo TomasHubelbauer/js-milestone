@@ -4,7 +4,7 @@ module.exports = {
    *
    * @param {number} number The number to calculate the milestone for.
    * @param {number} shift The magnitude shift when choosing the milestone level.
-   * @returns {number} The milestone
+   * @returns {{ milestone: number, gap: number }} The milestone and the gap.
    *
    */
   calculateCeilingMilestone(/** @type {number} */ number, /** @type {number} */ shift = 1) {
@@ -18,14 +18,15 @@ module.exports = {
 
     const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
     const magnitude = Math.pow(10, digits > shift ? digits - shift : digits - 1);
-    return ~~(number / magnitude) * magnitude;
+    const milestone = ~~(number / magnitude) * magnitude;
+    return { milestone, gap: milestone + magnitude - number };
   },
   /**
    * Calculates a flooring milestone for a number.
    *
    * @param {number} number The number to calculate the milestone for.
    * @param {number} shift The magnitude shift when choosing the milestone level.
-   * @returns {number} The milestone
+   * @returns {{ milestone: number, gap: number }} The milestone and the gap.
    *
    */
   calculateFlooringMilestone(/** @type {number} */ number, /** @type {number} */ shift = 1) {
@@ -40,11 +41,13 @@ module.exports = {
     const digits = Math.ceil(Math.log10(number + 1)) || 1 /* 0 has 1 digit */;
     const magnitude = Math.pow(10, digits > shift ? digits - shift : digits - 1);
 
-    let temp = ~~(number / magnitude) * magnitude;
-    if (temp !== number) {
-      temp += magnitude;
+    let milestone = ~~(number / magnitude) * magnitude;
+    let gap = magnitude;
+    if (milestone !== number) {
+      gap = number - milestone;
+      milestone += magnitude;
     }
 
-    return temp;
+    return { milestone, gap };
   }
 };
