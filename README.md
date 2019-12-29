@@ -65,3 +65,5 @@ The magnitude shift is useful for selecting a more granular milestone level than
 what by default corresponds to the magnitude of the number. The default, `1`
 makes it so that the milestone for numbers in the hundreds is the hundred, `2`
 makes it so that the milestone for numbers in the hunderds is the ten etc.
+
+## To-Do
