@@ -67,3 +67,5 @@ makes it so that the milestone for numbers in the hundreds is the hundred, `2`
 makes it so that the milestone for numbers in the hunderds is the ten etc.
 
 ## To-Do
+
+### Set up deployments to NPM and GPR with GitHub Actions
